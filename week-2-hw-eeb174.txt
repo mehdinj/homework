@@ -182,4 +182,18 @@ Question 3:
   580  tail -n +2 ../data/Pacifici2013_data.csv | cut -d ";" -f 2-6 | tr -s ";" " "| sort -r -n -k 6
   581  tail -n +2 ../data/Pacifici2013_data.csv | cut -d ";" -f 2-6 | tr -s ";" " "| sort -r -n -k 6 > BodyM.csv
   582* history 10 >> /home/eeb177-student/Desktop/eeb-177/homework/week-2-hw-eeb174.txt 
+
+
+Question 4:
+
+The 10th largest species:
+Cetartiodactyla Balaenidae Eubalaena Eubalaena glacialis 22999999.91
+
+The 10th smallest species:
+Chiroptera Vespertilionidae Pipistrellus Pipistrellus nanulus 2.51
+
+
+Question 5:
+
+
  
