@@ -232,7 +232,10 @@ Command: grep "numreads="  my_file2.fasta| cut -d "," -f 3| sort -V
 grep "numreads=3330" my_file2.fasta 
 
 
-Question 7:
+Question 7: 
+loop:   for datafile in *.txt; do echo $datafile; cp $datfile ../../sandbox/temp/edited-$datafile; done 
+
+Question 8:
 
 
 
