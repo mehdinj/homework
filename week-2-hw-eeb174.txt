@@ -17,9 +17,7 @@ command: cut -d ";" -f3  Pacifici2013_data.csv|sort|uniq -c| wc -l
 
 There are 153 unique families
 
-
-
-
+Number before families shows the number of occurances of each family
       9 Abrocomidae
       2 Acrobatidae
       1 Ailuridae
@@ -173,3 +171,5 @@ There are 153 unique families
      33 Viverridae
       3 Vombatidae
      21 Ziphiidae
+
+Question 3:
