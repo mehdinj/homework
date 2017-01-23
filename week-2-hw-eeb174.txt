@@ -236,6 +236,20 @@ Question 7:
 loop:   for datafile in *.txt; do echo $datafile; cp $datfile ../../sandbox/temp/edited-$datafile; done 
 
 Question 8:
+A)Using grep:
+1.No, because 'of' can be part of the word it will also capture the line : Software is like that.
+2.No, E flag is used for regular expression patterns, and there is no pattern in 'of' . 
+Therfore, it will also capture the line: Software is like that.
+3.Yes, becase -w flag considers 'of' a single word in searches. Thefore, it will only display: and the presence of absence:
+4.No, flag -i makes it case insensitive. However, of can still be part of the word. 
+Thefore, it will aslo display: Software is like that.
+
+B)find Pipeline Reading Comprehension:
+1. $(find . -name '*.dat') will find all .txt files in the current directory and outputs it to wc -l, 
+which will then count the number of lines in all of the .txt files in the current directory. Then, it will transfer that out put to sort -n via pipeline.
+Thefore, it will numerically sort all .txt files in the current directory according to their number of lines. 
+
+C)Matching and Subtracting:
 
 
 
