@@ -1,0 +1,138 @@
+((Please note that the earlier version of this (before the deadline) was submitted to class-assignment repo. This is a copy version!))
+A) Absolute vs Relative paths
+1.No, . is the current directory.
+2.No, / is the root directory.
+3.No, home directory in this case is /Users/amanda and not /home/amanda
+4.No, ../.. will go up two levels and it will be in /Users
+5.Yes, ~ goes to home directory which is /Users/amanda in this case.
+6.No, this will go to directory called "home" in the current directory which doesn't likely exist.
+7.Yes, ~/data goes to data directory in home directory and .. goes one level up so it will end up in the home directory again.
+8.Yes, no argument in front of cd will go up to home directory.
+9.Yes, it will go up one level from current /Users/amanda/data/ so it will end up in /Users/amanda or home directory.
+
+
+
+B) Realtive Path Resolution
+1.No, because directory backup in /Users exists.
+2.No, these are the contents of Users/think/backup, but ls ../backup asks for the contents of te backup directory.
+3.No, again these are the content of Users/think/backup and not ../backup. Also, flag -F was not used. 
+Hence, all / at the end of directory names are wrong.
+4.Yes, these are the contents of the ../backup which refers to /Users/backup.
+
+
+
+C) ls Reading Comprehension
+1.No pwd is a function and not the name of a directory.
+2.Yes, ls will list files in the current directory, -r reverse the listing and -F puts a slash after directory names.
+3.Yes, ls -r -F does the same thing as above, /Users/backup uses the aboslute path which is equivalent to current directory. 
+4.Correct answer, both #2 and #3 are correct, but #1 is wrong.
+
+
+
+D) Exploring more ls Arguments
+1. -l argument gives the long listing format. 
+It provides not only the file and directory names but also additional information like files size and last modification time. 
+-h argument stands for "human readable", makes the information more compact and user-friendly. 
+For instance, it displays the files sizes in k instead of bytes (6421-> 6.4k).
+
+
+
+E) Listing Recursively and By Time
+1.At each level, directories are listed alphabetical because we used -R. 
+Because -t is used, the files and directories in each directory are sorted by the time of last change.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
