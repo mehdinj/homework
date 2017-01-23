@@ -263,6 +263,19 @@ any files that contain the word temp in them.
 
 4.No, option 3 was correct.
 
+D)Tracking a species:
+grep -w $1 -r $2 | cut -d : -f 2  | cut -d , -f 1,3  > $1.txt 
+
+E)Little Women:
+for filename1,filename2 in New.txt; do echo filename1$(grep -w "Amy"|wc); echo filename2$(grep -w "Jo"|wc); done
+
+
+D)Finding Files With Different Properties:
+$ find ./ -type f -mtime -1 -user ahmed    this finds all the files that has been modified in the last -1 days (negative because it is relative to present)
+by the user ahmed.
+
+
+
 
 
 
