@@ -194,6 +194,21 @@ Chiroptera Vespertilionidae Pipistrellus Pipistrellus nanulus 2.51
 
 
 Question 5:
-
-
  
+  601  cd ~/Desktop/eeb-177/CSB/unix/sandbox/
+  602  wc -l BodyM.csv 
+  603  grep Vombatidae BodyM.csv 
+  604  grep -c Vombatidae BodyM.csv 
+  605  grep Bos BodyM.csv 
+  606  grep -w Bos BodyM.csv 
+  607  grep -i Bos BodyM.csv 
+  608  grep -B 2 -A 2 "Gorilla gorilla" BodyM.csv 
+  609  grep -n "Gorilla gorilla" BodyM.csv 
+  610  grep Gorilla BodyM.csv | grep -v gorilla
+  611  grep -w "Gorilla\|Pan" BodyM.csv 
+  612  cd ~/Desktop/eeb-177/CSB/unix/
+  613  grep -r "Gorilla" data/
+  614  history 14 >> /home/eeb177-student/Desktop/eeb-177/homework/week-2-hw-eeb174.txt 
+
+Question 6:
+
