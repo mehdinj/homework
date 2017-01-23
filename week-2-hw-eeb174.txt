@@ -250,6 +250,19 @@ which will then count the number of lines in all of the .txt files in the curren
 Thefore, it will numerically sort all .txt files in the current directory according to their number of lines. 
 
 C)Matching and Subtracting:
+1. No, it fails to extract all files containing the name ose in them. 
+It will find all .dat files and finds all files containing the part of a workd 'ose'
+ in those files.
+Finally it will exclude all files that contain the part of the word temp in them.
+
+2.No, it will fail to find all files with names ending with ose.dat. Since there is no regular expression indicated, it will attempt to find ose.dat ,
+a single file instead of finding all files ending with ose.dat. It will then exclude the files that have temp in them.
+
+3.Yes,  $(find /data -name '*ose.dat') will find all files ending with ose.dat because regular expression is used. grep -v "temp" will then exclude 
+any files that contain the word temp in them. 
+
+4.No, option 3 was correct.
+
 
 
 
