@@ -181,7 +181,7 @@ Question 3:
   579  tail -n +2 ../data/Pacifici2013_data.csv | cut -d ";" -f 2-6 | tr -s ";" " "
   580  tail -n +2 ../data/Pacifici2013_data.csv | cut -d ";" -f 2-6 | tr -s ";" " "| sort -r -n -k 6
   581  tail -n +2 ../data/Pacifici2013_data.csv | cut -d ";" -f 2-6 | tr -s ";" " "| sort -r -n -k 6 > BodyM.csv
-  582* history 10 >> /home/eeb177-student/Desktop/eeb-177/homework/week-2-hw-eeb174.txt 
+  582  history 10 >> /home/eeb177-student/Desktop/eeb-177/homework/week-2-hw-eeb174.txt 
 
 
 Question 4:
@@ -210,5 +210,36 @@ Question 5:
   613  grep -r "Gorilla" data/
   614  history 14 >> /home/eeb177-student/Desktop/eeb-177/homework/week-2-hw-eeb174.txt 
 
+
 Question 6:
+
+1. Command:  cd ~/Desktop/eeb-177/CSB/unix/sandbox
+
+2. The size of the file Marra2014_data.fasta is 553K
+
+3. Command:  cp Marra2014_data.fasta ../sandbox/my_file.fasta
+
+4. 16 contigs are classified as isogroup00036 
+command: grep -c isogroup00036 my_file.fasta 
+
+5.command: tr -s '  ' ',' <my_file.fasta > my_file2.fasta
+
+6. There are 955 uniqe isogroups in the file. 
+command: grep -c isogroup my_file.fasta |uniq
+
+7. contig=00302 has the highest numreads=3330
+Command: grep "numreads="  my_file2.fasta| cut -d "," -f 3| sort -V
+grep "numreads=3330" my_file2.fasta 
+
+
+Question 7:
+
+
+
+
+
+
+
+
+
 
