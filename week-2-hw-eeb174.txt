@@ -172,4 +172,14 @@ Number before families shows the number of occurances of each family
       3 Vombatidae
      21 Ziphiidae
 
+
 Question 3:
+
+  576  cd Desktop/eeb-177/CSB/unix/data/
+  577  cd ../sandbox/
+  578  tail -n +2 ../data/Pacifici2013_data.csv 
+  579  tail -n +2 ../data/Pacifici2013_data.csv | cut -d ";" -f 2-6 | tr -s ";" " "
+  580  tail -n +2 ../data/Pacifici2013_data.csv | cut -d ";" -f 2-6 | tr -s ";" " "| sort -r -n -k 6
+  581  tail -n +2 ../data/Pacifici2013_data.csv | cut -d ";" -f 2-6 | tr -s ";" " "| sort -r -n -k 6 > BodyM.csv
+  582* history 10 >> /home/eeb177-student/Desktop/eeb-177/homework/week-2-hw-eeb174.txt 
+ 
