@@ -1,1 +1,39 @@
-Question 1:
+Question 1: 
+
+1.11.2) Hormone levels in baboons 
+
+1. command:
+
+cut -f 1 Gesquiere2011_data.csv | grep -c -w 3
+cut -f 1 Gesquiere2011_data.csv | grep -c -w 27
+
+#first command will cut the first column and counts the number of occurances of 3.
+#second command does a similar function for the number of occurances of 27.
+
+
+2.command:
+
+# first, we should read the input:
+# $1 variable is file name and $2 is male ID
+read $1 
+read $2
+
+cut -f 1 $1 | grep -c -w $2
+# this command will cut the first column of the file name $1 and grep function counts the number of occurances of male ID=$2.
+
+
+3.command:
+
+set IDS=tail -n +2 Gesquiere2011_data.csv | cut -f 1 | sort -n | uniq
+for id in $IDS
+do
+    number=cut -f 1 Gesquiere2011_data.csv | grep -c -w $id
+
+    echo "ID:" $id "number of ID=" $number
+done
+
+
+Question 2:
+
+
+
