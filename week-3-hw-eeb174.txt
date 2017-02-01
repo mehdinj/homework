@@ -15,47 +15,71 @@ cut -f 1 Gesquiere2011_data.csv | grep -c -w 27
 
 # first, we should read the input:
 # $1 variable is file name and $2 is male ID
-read $1 
-read $2
 
+#! /bin/bash
 cut -f 1 $1 | grep -c -w $2
 # this command will cut the first column of the file name $1 and grep function counts the number of occurances of male ID=$2.
+# we then have to save the file as .sh file in scripts folder setup previously.
+# execution permission should also be changed using --> 
+ chmod u+x occurance.sh
+
+an example of input and output of the script:
+eeb177-student@eeb177-VirtualBox:~/Desktop/eeb-177/CSB/unix/data$ occurance.sh Gesquiere2011_data.csv 1
+10
+
 
 
 3.command:
 
-set IDS=tail -n +2 Gesquiere2011_data.csv | cut -f 1 | sort -n | uniq
+#this script will first extract all uniqe IDs by removing the header, cutting the first column and sorting and applying uniq function.
+#this script will then go through a loop of uniqe IDs and counts and prints the number of occurances of all IDs.
+
+#! /bin/bash
+
+IDS=$( tail -n +2 Gesquiere2011_data.csv | cut -f 1| sort -n| uniq)
+
 for id in $IDS
 do
-    number=cut -f 1 Gesquiere2011_data.csv | grep -c -w $id
-
-    echo "ID:" $id "number of ID=" $number
+  number=$(cut -f 1 Gesquiere2011_data.csv | grep -c -w $id)
+  echo "ID: $id number of occurances of ID= $number"
 done
+
 
 
 Question 2:
 1.command:
+#this script will take an input of filename. This first line of code will calculate and returns the number of rows for that specific file.
+#The second line will calculate and returns the number of columns in that specific file inside the Saavedra2013 directory.
+
+#! /bin/bash
+
 echo "Number of rows:"
-cat /data/Saavedra2013/n10.txt | wc -l
+cat /data/Saavedra2013/$1 | wc -l
 echo "Number of columns:"
-head -n 1/data/Saavedra2013/n10.txt  | tr -d ' ' | tr -d '\n' | wc -c
+head -n 1 /data/Saavedra2013/$1  | tr -d ' ' | tr -d '\n' | wc -c
 
 
 2.command:
-FILES=../data/Saavedra2013/*.txt
-for f in $FILES 
+#this script will extract all files within Saavedra2013 and calculates and returns the number of files in each file within Saacedra2013 directory.
+
+#! /bin/bash
+
+for file in ~/Desktop/eeb-177/CSB/unix/data/Saavedra2013/*.txt
 do
-    myrow=`cat $f | wc -l`
-    mycol=`head -n 1 $f | tr -d ' ' | tr -d '\n' | wc -c`
-    echo $f $myrow $mycol
+    myrow=`cat $file | wc -l`
+    mycol=`head -n 1 $file | tr -d ' ' | tr -d '\n' | wc -c`
+    echo $file $myrow $mycol
 done
 
-3. #after copy and pasting the last function as an script (size.sh) in script folders:
+
+3. #after copy and pasting the last function (#2) as an script (size.sh) in script folders:
+#first line of code gives the file name with the largest number of rows 
+#second line of code gives the file name with the largest number of columns
+
 bash size.sh | sort -n -r -k 2 | head -n 1
 bash size.sh | sort -n -r -k 3 | head -n 1
 
-first line of code gives the file name with the largest number of rows 
-second line of code gives the file name with the largest number of columns
+
 
 
 
