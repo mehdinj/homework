@@ -46,7 +46,8 @@ done
 
 
 
-Question 2:
+Question 2:  1.11.3)
+
 1.command:
 #this script will take an input of filename. This first line of code will calculate and returns the number of rows for that specific file.
 #The second line will calculate and returns the number of columns in that specific file inside the Saavedra2013 directory.
