@@ -81,8 +81,12 @@ done
 bash size.sh | sort -n -r -k 2 | head -n 1
 bash size.sh | sort -n -r -k 3 | head -n 1
 
+output:
+#file name with largest number of the rows
+  /data/Saavedra2013/n58.txt 678 90
 
-
+#flie name with largest number of columns
+ /data/Saavedra2013/n56.txt 110 207
 
 
 
