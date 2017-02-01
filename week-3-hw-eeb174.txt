@@ -34,6 +34,32 @@ done
 
 
 Question 2:
+1.command:
+echo "Number of rows:"
+cat /data/Saavedra2013/n10.txt | wc -l
+echo "Number of columns:"
+head -n 1/data/Saavedra2013/n10.txt  | tr -d ' ' | tr -d '\n' | wc -c
+
+
+2.command:
+FILES=../data/Saavedra2013/*.txt
+for f in $FILES 
+do
+    myrow=`cat $f | wc -l`
+    mycol=`head -n 1 $f | tr -d ' ' | tr -d '\n' | wc -c`
+    echo $f $myrow $mycol
+done
+
+3. #after copy and pasting the last function as an script (size.sh) in script folders:
+bash size.sh | sort -n -r -k 2 | head -n 1
+bash size.sh | sort -n -r -k 3 | head -n 1
+
+first line of code gives the file name with the largest number of rows 
+second line of code gives the file name with the largest number of columns
+
+
+
+
 
 
 
