@@ -54,9 +54,9 @@ Question 2:
 #! /bin/bash
 
 echo "Number of rows:"
-cat /data/Saavedra2013/$1 | wc -l
+cat ~/Desktop/eeb-177/CSB/unix/data/Saavedra2013/$1 | wc -l
 echo "Number of columns:"
-head -n 1 /data/Saavedra2013/$1  | tr -d ' ' | tr -d '\n' | wc -c
+head -n 1  ~/Desktop/eeb-177/CSB/unix/data/Saavedra2013/$1 | tr -d ' ' | tr -d '\n' | wc -c
 
 
 2.command:
