@@ -61,7 +61,8 @@ head -n 1  ~/Desktop/eeb-177/CSB/unix/data/Saavedra2013/$1 | tr -d ' ' | tr -d '
 
 
 2.command:
-#this script will extract all files within Saavedra2013 and calculates and returns the number of files in each file within Saacedra2013 directory.
+#this script will extract all files within Saavedra2013 and calculates 
+#and returns the number of files in each file within Saacedra2013 directory.
 
 #! /bin/bash
 
@@ -73,7 +74,7 @@ do
 done
 
 
-3. #after copy and pasting the last function (#2) as an script (size.sh) in script folders:
+3. #we have to first make the last function (#2) as an script (size.sh) in script folders:
 #first line of code gives the file name with the largest number of rows 
 #second line of code gives the file name with the largest number of columns
 
