@@ -92,6 +92,24 @@ Answer: There are 545 unique fossil species.
 <br> Longest fossil range belongs to Eubalaena australis , with the fossil range =  [23.03]
 <br> Longest fossil range belongs to Megaptera novaeangliae , with the fossil range =  [23.03]
 
+# Extra Credit:
+***
+For Genera of family canids:
+```{r}
+library(ggplot2)
+canids <- read.csv("~/Desktop/eeb-177/homework/canids-genus-ranges.csv", header = F, as.is = T)
+names(canids) <- c("genus", "minage", "maxage")
+head(canids)
+
+canid_occ <- ggplot(canids, aes( genus, ymin = maxage, ymax=minage, colour = genus))
+canid_occ <- canid_occ + geom_linerange()+ theme(legend.position="none")+ coord_flip()+  theme(axis.text.y = element_text(size=3))+ theme(axis.ticks.y=element_blank()) + scale_y_continuous(limits=c(0, 40), expand = c(0, 0), breaks=c(0, 10, 20, 30, 40)) + labs(title = "Canid Fossil Occurrences", x = "Genera", y = "Ma ago") + theme(plot.title = element_text(hjust = 0.5, size=22, face = "bold"), axis.title =element_text(size=20))
+
+canid_occ
+
+
+```
+
+
 
 # Exploring Data Frames:
 ***
