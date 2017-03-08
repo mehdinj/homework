@@ -471,7 +471,13 @@ Given the following code:
     ##   a   b   c   d   e 
     ## 5.4 6.2 7.1 4.8 7.5
 
-Answer:
+Come up with at least 3 different commands that will produce the
+following output:
+
+b c d 6.2 7.1 4.8
+
+After you find 3 different commands, compare notes with your neighbour.
+Did you have different strategies? Answer:
 
     #1
     x[2:4]
