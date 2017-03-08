@@ -113,6 +113,35 @@ to two species : <br> Longest fossil range belongs to Eubalaena
 australis , with the fossil range = \[23.03\] <br> Longest fossil range
 belongs to Megaptera novaeangliae , with the fossil range = \[23.03\]
 
+Extra Credit:
+=============
+
+------------------------------------------------------------------------
+
+For Genera of family canids:
+
+    library(ggplot2)
+    canids <- read.csv("~/Desktop/eeb-177/homework/canids-genus-ranges.csv", header = F, as.is = T)
+    names(canids) <- c("genus", "minage", "maxage")
+    head(canids)
+
+    ##          genus  minage maxage
+    ## 1   Chailicyon 37.2000 48.600
+    ## 2 Sunkahetanka 20.4300 30.800
+    ## 3   Borophagus  1.8000  5.333
+    ## 4    Otarocyon 20.4300 33.900
+    ## 5  Neovulpavus 40.4000 46.200
+    ## 6         Cuon  0.0117  2.588
+
+    canid_occ <- ggplot(canids, aes( genus, ymin = maxage, ymax=minage, colour = genus))
+    canid_occ <- canid_occ + geom_linerange()+ theme(legend.position="none")+ coord_flip()+  theme(axis.text.y = element_text(size=3))+ theme(axis.ticks.y=element_blank()) + scale_y_continuous(limits=c(0, 40), expand = c(0, 0), breaks=c(0, 10, 20, 30, 40)) + labs(title = "Canid Fossil Occurrences", x = "Genera", y = "Ma ago") + theme(plot.title = element_text(hjust = 0.5, size=22, face = "bold"), axis.title =element_text(size=20))
+
+    canid_occ
+
+    ## Warning: Removed 3 rows containing missing values (geom_linerange).
+
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+
 Exploring Data Frames:
 ======================
 
@@ -3508,16 +3537,16 @@ Creating Publication-Quality Graphics:
     ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
       geom_point()
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-38-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-39-1.png)
 
     ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp))
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-39-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-40-1.png)
 
     ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
       geom_point()
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-40-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-41-1.png)
 
 Challenge 1:
 ============
@@ -3537,7 +3566,7 @@ Answer:
 
     ggplot(data = gapminder, aes(x = year, y = lifeExp)) + geom_point()
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-41-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-42-1.png)
 
 Challenge 2:
 ============
@@ -3554,24 +3583,24 @@ column. What trends do you see in the data? Are they what you expected?
     ggplot(data = gapminder, aes(x = year, y = lifeExp, color=continent)) +
       geom_point()
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-42-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-43-1.png)
 
 <br><br> Layers:
 
     ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country, color=continent)) +
       geom_line()
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-43-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-44-1.png)
 
     ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country, color=continent)) +
       geom_line() + geom_point()
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-44-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-45-1.png)
 
     ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
       geom_line(aes(color=continent)) + geom_point()
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-45-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-46-1.png)
 
 Challenge 3:
 ============
@@ -3586,29 +3615,29 @@ Answer: The lines now get drawn over the points!
     ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
      geom_point() + geom_line(aes(color=continent))
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-46-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-47-1.png)
 
 Transformations and statistics:
 
     ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color=continent)) +
       geom_point()
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-47-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-48-1.png)
 
     ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
       geom_point(alpha = 0.5) + scale_x_log10()
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-48-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-49-1.png)
 
     ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
       geom_point() + scale_x_log10() + geom_smooth(method="lm")
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-49-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-50-1.png)
 
     ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
       geom_point() + scale_x_log10() + geom_smooth(method="lm", size=1.5)
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-50-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-51-1.png)
 
 Challenge 4a:
 =============
@@ -3624,7 +3653,7 @@ Hint: do not use the aes function. <br><br> Answer:
      geom_point(size=3.5, color="purple") + scale_x_log10() +
      geom_smooth(method="lm", size=1.5)
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-51-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-52-1.png)
 
 Challenge 4b:
 =============
@@ -3639,7 +3668,7 @@ The color argument can be used inside the aesthetic.
     geom_point(size=3, pch=17) + scale_x_log10() +
     geom_smooth(method="lm", size=1.5)
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-52-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-53-1.png)
 <br><br> Multi-panel figures:
 
     starts.with <- substr(gapminder$country, start = 1, stop = 1)
@@ -3647,7 +3676,7 @@ The color argument can be used inside the aesthetic.
     ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
       geom_line() + facet_wrap( ~ country)
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-53-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-54-1.png)
 <br><br> Modifying text:
 
     ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
@@ -3656,7 +3685,7 @@ The color argument can be used inside the aesthetic.
       scale_colour_discrete(name="Continent") +
       theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-54-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-55-1.png)
 
 Challenge 5:
 ============
@@ -3673,6 +3702,6 @@ layer to panel the density plots by year. <br><br> Answer:
     ggplot(data = gapminder, aes(x = gdpPercap, fill=continent)) +
      geom_density(alpha=0.6) + facet_wrap( ~ year) + scale_x_log10()
 
-![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-55-1.png)
+![](r-week-8-hw-eeb174_files/figure-markdown_strict/unnamed-chunk-56-1.png)
 
 ---End of software carpentary---
