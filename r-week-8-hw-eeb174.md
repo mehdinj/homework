@@ -92,8 +92,8 @@ Family Cetacea:
 
     ## Warning: Removed 51 rows containing missing values (geom_linerange).
 
-Report for family Canids:
-=========================
+Report for family Cetacea:
+==========================
 
 ------------------------------------------------------------------------
 
@@ -266,7 +266,8 @@ Make a data frame that holds the following information for yourself:
 
 first name last name lucky number Then use rbind to add an entry for the
 people sitting beside you. Finally, use cbind to add a column with each
-person’s answer to the question, “Is it time for coffee break?” Answer:
+person’s answer to the question, “Is it time for coffee break?” <br>
+Answer:
 
     data <- data.frame(first_name = c('Mehdi'),
                      last_name = c('Nojoumi'),
@@ -477,7 +478,7 @@ following output:
 b c d 6.2 7.1 4.8
 
 After you find 3 different commands, compare notes with your neighbour.
-Did you have different strategies? Answer:
+Did you have different strategies? <br> Answer:
 
     #1
     x[2:4]
