@@ -71,7 +71,7 @@ ggsave(filename = "cetacea-occ.pdf", plot = cetacea_occ)
 
 ```
 
-# Report for family Canids:
+# Report for family Cetacea:
 ***
 1.What taxonomic group is displayed?
  <br> Figures are for the group Cetacea. 
@@ -169,6 +169,7 @@ Make a data frame that holds the following information for yourself:
   last name
   lucky number
 Then use rbind to add an entry for the people sitting beside you. Finally, use cbind to add a column with each person’s answer to the question, “Is it time for coffee break?”
+<br>
 Answer:
 ```{r}
 data <- data.frame(first_name = c('Mehdi'),
@@ -289,6 +290,7 @@ Come up with at least 3 different commands that will produce the following outpu
 6.2 7.1 4.8 
 
 After you find 3 different commands, compare notes with your neighbour. Did you have different strategies?
+<br>
 Answer:
 ```{r}
 #1
